@@ -11,9 +11,13 @@
  * ----------------------------------------------------------
  */
  #include "deletable_primes.h"
+ #include <math.h>
  unsigned long remove_digit(int index, unsigned long n)
  {
-   return 0;
+  unsigned long digits_before = n/pow(10,index+1);
+  unsigned long digits_after = n%(unsigned long)pow(10,index);
+  unsigned long new_number = digits_before*pow(10,index)+digits_after;
+  return new_number;
  }
  int get_ways(unsigned long p)
  {
